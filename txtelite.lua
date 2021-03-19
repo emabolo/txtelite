@@ -8,7 +8,6 @@
    and to fix a bug in the goat soup algorithm.
  */
 
-
 /* ----------------------------------------------------------------------
   The nature of basic mechanisms used to generate the Elite socio-economic
 universe are now widely known. A competant games programmer should be able to
@@ -29,10 +28,13 @@ iancgbell@email.com
 www.ibell.co.uk
   ---------------------------------------------------------------------- */
 
-
-/* Note that this program is "quick-hack" text parser-driven version
+Note that this program is "quick-hack" text parser-driven version
 of Elite with no combat or missions.
-*/
+
+------------------------------------------------------------------------
+ Ported to LUA by Emanuele Bolognesi.
+
+ Since the code uses bitwise operators, LUA5.3+ is required
 
 --]]
 
@@ -49,10 +51,7 @@ maxlen=20
 uint ='uint_is_forbidden'
 
 --typedef int planetnum;
-
-
 --typedef struct{ uint8 a,b,c,d;} fastseedtype;  /* four byte random number used for planet description */
-
 --typedef struct
 --{ uint16 w0; uint16 w1; uint16 w2;} seedtype;  /* six byte random number used as seed for planets */
 
@@ -219,7 +218,6 @@ desc_list = {
 --/**-Required data for text interface **/
 
 tradnames = {} --/* Tradegood names used in text commands Set using commodities array */
-
 nocomms = 14
 
 local dobuy = ""
@@ -249,7 +247,6 @@ local lastrand = 0;
 
 
 --/**- General functions **/
-
 -----------------------------------------------------
 function onebyte(num)
 	return num&0xFF
@@ -991,9 +988,6 @@ end
 --      I have checked with this code for Zaonce with fluctaution &AB 
 --      against the SuperVision 6502 code and both prices and availabilities tally.
 --   */
-
-
-
 
 
 --/**+end **/
